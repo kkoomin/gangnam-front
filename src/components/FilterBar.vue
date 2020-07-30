@@ -1,5 +1,5 @@
 <template>
-  <section class="filter-bar">
+  <article class="filter-bar">
     <div class="view-filter filter-content">
       <button
         class="view-btn"
@@ -32,7 +32,7 @@
         16개씩 보기
       </button>
     </div>
-  </section>
+  </article>
 </template>
 
 <script>
@@ -47,11 +47,19 @@ export default {
 
 <style lang="scss">
 .filter-bar {
-  display: flex;
-  justify-content: flex-end;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, max-content);
 
   .filter-content {
     margin: 0 0.5rem;
+  }
+
+  .view-filter {
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
   }
 }
 

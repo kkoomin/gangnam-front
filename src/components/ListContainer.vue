@@ -1,24 +1,29 @@
 <template>
-  <section
-    class="list-container"
-    :class="$store.state.postView === 'grid' ? 'grid' : null"
-    v-if="$store.state.posts"
-  >
-    <PostItem
-      v-for="post in $store.getters.renderPosts"
-      :key="post.id"
-      :post="post"
-    />
+  <section class="list-container">
+    <FilterBar />
+    <article
+      class="list"
+      :class="$store.state.postView === 'grid' ? 'grid' : null"
+      v-if="$store.state.posts"
+    >
+      <PostItem
+        v-for="post in $store.getters.renderPosts"
+        :key="post.id"
+        :post="post"
+      />
+    </article>
   </section>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import FilterBar from "./FilterBar.vue";
 import PostItem from "./PostItem.vue";
 
 export default {
   name: "ListContainer",
   components: {
+    FilterBar,
     PostItem,
   },
   methods: {
@@ -30,13 +35,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .list-container {
-  margin-top: 1.5rem;
+  max-width: 1200px;
+  margin: 1.5rem auto;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  @media only screen and (min-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>강남 포스트</h1>
+    <h1>Gangnam Posts</h1>
   </header>
 </template>
 
@@ -10,4 +10,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+header {
+  h1 {
+    font-size: 3rem;
+  }
+}
+</style>
