@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapMutations } from "vuex";
 import FilterBar from "./FilterBar.vue";
 import PostItem from "./PostItem.vue";
 
@@ -28,9 +28,14 @@ export default {
   },
   methods: {
     ...mapActions(["getPosts"]),
+    ...mapMutations(["setView", "setNumber"]),
   },
   created() {
     this.getPosts();
+    if (localStorage.getItem("view"))
+      this.setView(localStorage.getItem("view"));
+    if (localStorage.getItem("number"))
+      this.setNumber(localStorage.getItem("number") * 1);
   },
 };
 </script>

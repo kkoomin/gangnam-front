@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <main>
-      <PostContainer v-if="$store.state.selectedPost" />
+      <PostContainer v-if="$store.state.selectedPostId" />
       <ListContainer v-else />
     </main>
   </div>

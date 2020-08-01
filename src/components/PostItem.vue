@@ -2,7 +2,7 @@
   <article
     class="post-item"
     :class="$store.state.postView === 'grid' ? 'grid-item' : null"
-    @click="selectPost(post.id)"
+    @click="selectPostId(post.id)"
   >
     <div class="post-item_info">
       <h1 class="truncated">
@@ -25,7 +25,7 @@ export default {
   name: "PostItem",
   props: ["post"],
   methods: {
-    ...mapActions(["selectPost"]),
+    ...mapActions(["selectPostId"]),
   },
 };
 </script>

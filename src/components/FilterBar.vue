@@ -86,6 +86,4 @@ export default {
   color: white;
   box-shadow: 0 3px 8px rgba(78, 75, 72, 0.322);
 }
-
-//     background: #dd1239;
 </style>
