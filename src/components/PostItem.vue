@@ -14,7 +14,8 @@
       </p>
     </div>
     <div class="post-item_thumbnail">
-      <img :src="post.image" alt="Post Thumbnail Image" />
+      <img v-if="post.image" :src="post.image" alt="Post Thumbnail Image" />
+      <div v-else>Loading...</div>
     </div>
   </article>
 </template>
@@ -43,8 +44,17 @@ export default {
   }
 
   &_thumbnail {
+    display: flex;
+    justify-content: center;
     height: 150px;
-    margin: auto 0;
+    width: 150px;
+    background-color: #dd1239;
+    margin: auto;
+
+    div {
+      margin: auto;
+      color: white;
+    }
   }
 
   @media only screen and (max-width: 992px) {

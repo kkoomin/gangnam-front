@@ -14,6 +14,7 @@ export default new Vuex.Store({
     postNumber: 8,
     postView: "list",
     posts: null,
+    isLoaded: false,
   },
   getters: {
     renderPosts: (state) => state.posts.splice(0, state.postNumber),

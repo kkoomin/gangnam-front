@@ -45,16 +45,10 @@ export default {
     this.setSelectedPost(null);
     this.setComments(null);
   },
-  //   data() {
-  //     const title = this.$store.state.post.title;
-  //     return {
-  //       title: title,
-  //     };
-  //   },
-  async metaInfo() {
-    console.log(this.post);
+  metaInfo() {
     return {
-      title: await this.post.title,
+      title: this.post ? this.post.title : "Loading",
+      meta: [{ description: this.post ? this.post.body : "Loading" }],
     };
   },
 };
