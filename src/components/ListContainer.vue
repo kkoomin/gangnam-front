@@ -29,6 +29,17 @@ export default {
   methods: {
     ...mapActions(["getPosts"]),
     ...mapMutations(["setView", "setNumber"]),
+    onScroll() {
+      if (
+        window.scrollY + document.documentElement.clientHeight >
+        document.documentElement.scrollHeight - 5
+      ) {
+        this.loadNextPosts();
+      }
+    },
+    loadNextPosts() {
+      console.log("this is the bottom!");
+    },
   },
   created() {
     this.getPosts();
@@ -36,6 +47,12 @@ export default {
       this.setView(localStorage.getItem("view"));
     if (localStorage.getItem("number"))
       this.setNumber(localStorage.getItem("number") * 1);
+  },
+  mounted() {
+    document.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>
