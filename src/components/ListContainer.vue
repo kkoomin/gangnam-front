@@ -3,20 +3,16 @@
     <FilterBar />
     <article
       class="list"
-      :class="$store.state.postView === 'grid' ? 'grid' : null"
-      v-if="$store.state.posts"
+      :class="$store.state.post.postView === 'grid' ? 'grid' : null"
+      v-if="renderPosts"
     >
-      <PostItem
-        v-for="post in $store.getters.renderPosts"
-        :key="post.id"
-        :post="post"
-      />
+      <PostItem v-for="post in renderPosts" :key="post.id" :post="post" />
     </article>
   </section>
 </template>
 
 <script>
-import { mapActions, mapMutations } from "vuex";
+import { mapActions, mapMutations, mapGetters } from "vuex";
 import FilterBar from "./FilterBar.vue";
 import PostItem from "./PostItem.vue";
 
@@ -26,19 +22,25 @@ export default {
     FilterBar,
     PostItem,
   },
+  computed: {
+    ...mapGetters(["renderPosts"]),
+  },
   methods: {
-    ...mapActions(["getPosts"]),
-    ...mapMutations(["setView", "setNumber"]),
+    ...mapActions(["getPosts", "getNextPosts"]),
+    ...mapMutations(["setView", "setNumber", "setIsNextFetch"]),
     onScroll() {
       if (
         window.scrollY + document.documentElement.clientHeight >
-        document.documentElement.scrollHeight - 5
+        document.documentElement.scrollHeight - 1
       ) {
         this.loadNextPosts();
       }
     },
     loadNextPosts() {
       console.log("this is the bottom!");
+      this.setIsNextFetch(true);
+      this.getNextPosts();
+      this.setIsNextFetch(false);
     },
   },
   created() {

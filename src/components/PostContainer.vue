@@ -1,6 +1,6 @@
 <template>
   <section class="post-container">
-    <article v-if="$store.state.selectedPost">
+    <article v-if="post">
       <button class="list-btn" @click="selectPostId(null)">목록보기</button>
 
       <div class="content">
@@ -37,7 +37,7 @@ export default {
     ...mapMutations(["setSelectedPost", "setComments"]),
   },
   created() {
-    const id = this.$store.state.selectedPostId;
+    const id = this.$store.state.post.selectedPostId;
     this.getPost(id);
     this.getCommentsByPost(id);
   },

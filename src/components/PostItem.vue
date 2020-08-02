@@ -1,7 +1,7 @@
 <template>
   <article
     class="post-item"
-    :class="$store.state.postView === 'grid' ? 'grid-item' : null"
+    :class="$store.state.post.postView === 'grid' ? 'grid-item' : null"
     @click="selectPostId(post.id)"
   >
     <div class="post-item_info">

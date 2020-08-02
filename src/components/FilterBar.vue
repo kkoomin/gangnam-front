@@ -3,14 +3,14 @@
     <div class="view-filter filter-content">
       <button
         class="view-btn"
-        :class="$store.state.postView === 'list' ? 'clicked' : null"
+        :class="postView === 'list' ? 'clicked' : null"
         @click="changePostView('list')"
       >
         List
       </button>
       <button
         class="view-btn"
-        :class="$store.state.postView === 'grid' ? 'clicked' : null"
+        :class="postView === 'grid' ? 'clicked' : null"
         @click="changePostView('grid')"
       >
         Grid
@@ -19,14 +19,14 @@
     <div class="number-filter filter-content">
       <button
         class="number-btn"
-        :class="$store.state.postNumber === 8 ? 'clicked' : null"
+        :class="postNumber === 8 ? 'clicked' : null"
         @click="changePostNumber(8)"
       >
         8개씩 보기
       </button>
       <button
         class="number-btn"
-        :class="$store.state.postNumber === 16 ? 'clicked' : null"
+        :class="postNumber === 16 ? 'clicked' : null"
         @click="changePostNumber(16)"
       >
         16개씩 보기
@@ -36,11 +36,14 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "FilterBar",
   methods: {
     ...mapActions(["changePostView", "changePostNumber"]),
+  },
+  computed: {
+    ...mapGetters(["postView", "postNumber"]),
   },
 };
 </script>
