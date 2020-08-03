@@ -53,6 +53,7 @@ export default {
   &_info {
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       box-sizing: border-box;
+      width: calc(100% - 200px);
     }
     margin: 0 1rem;
     &-title {
@@ -94,6 +95,12 @@ export default {
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     box-sizing: border-box;
     width: calc(100% / 4.3);
+  }
+  .post-item_info {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      box-sizing: border-box;
+      width: 100%;
+    }
   }
 
   @media only screen and (min-width: 992px) {
