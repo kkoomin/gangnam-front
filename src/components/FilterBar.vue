@@ -50,7 +50,7 @@ export default {
 
 <style lang="scss">
 .filter-bar {
-  margin: 0 auto;
+  margin: 2rem auto;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, max-content);
@@ -71,8 +71,9 @@ export default {
   cursor: pointer;
   margin: 2px;
   height: 2rem;
-  width: 3rem;
-  border: 2px solid #dd1239;
+  width: 5rem;
+  border: 1.5px solid #dd1239;
+  border-radius: 5px;
 }
 
 .number-btn {
@@ -81,7 +82,8 @@ export default {
   margin: 2px;
   height: 2rem;
   width: 6rem;
-  border: 2px solid #dd1239;
+  border: 1.5px solid #dd1239;
+  border-radius: 5px;
 }
 
 .clicked {

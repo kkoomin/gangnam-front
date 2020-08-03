@@ -5,11 +5,11 @@
     @click="selectPostId(post.id)"
   >
     <div class="post-item_info">
-      <h1 class="truncated">
+      <h1 class="post-item_info-title truncated">
         {{ post.title }}
       </h1>
       <span>{{ post.userName }}</span>
-      <p class="multi-truncated">
+      <p class="post-item_info-body multi-truncated">
         {{ post.body }}
       </p>
     </div>
@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .post-item {
-  border: 1px solid black;
+  box-shadow: 0 8px 10px 1px rgba(41, 37, 33, 0.178);
   display: grid;
   grid-template-columns: 1fr max-content;
   margin: 1rem auto;
@@ -41,6 +41,13 @@ export default {
 
   &_info {
     margin: 0 1rem;
+    &-title {
+      font-size: 1.2rem;
+    }
+
+    &-body {
+      text-align: left;
+    }
   }
 
   &_thumbnail {

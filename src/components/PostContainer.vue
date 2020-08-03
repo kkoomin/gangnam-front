@@ -5,6 +5,7 @@
 
       <div class="content">
         <h1 class="content-title">{{ post.title }}</h1>
+        <span class="content-author">✏️ {{ post.userName }}</span>
         <p class="content-body">{{ post.body }}</p>
       </div>
 
@@ -56,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .post-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 1.5rem auto;
 
   .content {
@@ -70,7 +71,7 @@ export default {
 
     &-title {
       max-width: max-content;
-      margin: 2rem auto;
+      margin: 2rem auto 1rem auto;
       font-size: 1.4rem;
       background-image: linear-gradient(to right, #dd123bb9, #dd123bb9);
       background-position: bottom left;
@@ -78,9 +79,14 @@ export default {
       background-size: 100% 0.6rem;
     }
 
+    &-author {
+      display: block;
+      text-align: left;
+      font-weight: 500;
+    }
+
     &-body {
-      padding-left: 3rem;
-      padding-right: 3rem;
+      text-align: left;
     }
   }
 

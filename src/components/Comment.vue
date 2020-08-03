@@ -17,10 +17,10 @@ export default {
 .comment {
   /* border-bottom: 1px solid black; */
   padding: 0 0.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   h1 {
-    font-size: 1.2rem;
-    margin: 1rem auto;
+    font-size: 1.1rem;
+    margin: 1rem auto 0.5rem auto;
   }
   p {
     margin: 0.7rem auto;

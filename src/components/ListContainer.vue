@@ -8,6 +8,7 @@
     >
       <PostItem v-for="post in renderPosts" :key="post.id" :post="post" />
     </article>
+    <!-- <div v-if="$store.state.post.isNextFetch">LOADING...</div> -->
   </section>
 </template>
 
@@ -27,7 +28,7 @@ export default {
   },
   methods: {
     ...mapActions(["getPosts", "getNextPosts"]),
-    ...mapMutations(["setView", "setNumber", "setIsNextFetch"]),
+    ...mapMutations(["setPosts", "setView", "setNumber", "setIsNextFetch"]),
     onScroll() {
       if (
         window.scrollY + document.documentElement.clientHeight >
@@ -54,14 +55,15 @@ export default {
     document.addEventListener("scroll", this.onScroll);
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
+    document.removeEventListener("scroll", this.onScroll);
+    this.setPosts(null);
   },
 };
 </script>
 
 <style lang="scss">
 .list-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 1.5rem auto;
 }
 

@@ -92,8 +92,20 @@ const actions = {
   },
   async getPost({ commit }, id) {
     const url = `${ROOT_URL}/posts/${id}`;
-    const post_data = await axios.get(url).then((res) => res.data);
+    const post_data = await axios.get(url).then(async (res) => {
+      const post = res.data;
+      const user_name = await axios
+        .get(`${ROOT_URL}/users/${post.userId}`)
+        .then((res) => res.data.name)
+        .catch((err) => {
+          console.log(err);
+        });
+      return { ...post, userName: user_name };
+    });
+    console.log(post_data);
     commit("setSelectedPost", post_data);
+
+    // ****************** 유저이름 불러오기 구현하기!!!
   },
 
   selectPostId({ commit }, id) {

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Gangnam Posts</h1>
+    <h1>Gangnam 📃 Posts</h1>
   </header>
 </template>
 
