@@ -85,7 +85,6 @@ const actions = {
       })
     );
 
-    console.log(posts_data);
     const final_data = state.posts
       ? state.posts.concat(posts_data) // nextFetch 일 경우
       : posts_data; // 첫 fetch 일 경우
@@ -103,7 +102,6 @@ const actions = {
         });
       return { ...post, userName: user_name };
     });
-    console.log(post_data);
     commit("setSelectedPost", post_data);
 
     // ****************** 유저이름 불러오기 구현하기!!!

@@ -41,7 +41,6 @@ export default {
       }
     },
     loadNextPosts() {
-      console.log("this is the bottom!");
       this.setIsNextFetch(true);
       this.getNextPosts();
     },
