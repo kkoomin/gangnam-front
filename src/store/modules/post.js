@@ -16,6 +16,7 @@ const getters = {
   postNumber: (state) => state.postNumber,
   renderPosts: (state) => state.posts,
   post: (state) => state.selectedPost,
+  isNextFetch: (state) => state.isNextFetch,
 };
 
 const mutations = {
@@ -79,7 +80,7 @@ const actions = {
         return {
           ...post,
           userName: user_name,
-          image: images[Math.floor(Math.random() * 2)],
+          image: images[Math.floor(Math.random() * 3)],
         };
       })
     );

@@ -78,7 +78,6 @@ export default {
     flex-direction: column-reverse;
     margin: 1rem 0.5rem;
     height: auto;
-    /* width: 270px; */
   }
 }
 

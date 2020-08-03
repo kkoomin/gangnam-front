@@ -8,7 +8,10 @@
     >
       <PostItem v-for="post in renderPosts" :key="post.id" :post="post" />
     </article>
-    <!-- <div v-if="$store.state.post.isNextFetch">LOADING...</div> -->
+
+    <div class="list-loading-message" v-if="isNextFetch || !renderPosts">
+      LOADING...
+    </div>
   </section>
 </template>
 
@@ -24,7 +27,7 @@ export default {
     PostItem,
   },
   computed: {
-    ...mapGetters(["renderPosts"]),
+    ...mapGetters(["renderPosts", "isNextFetch"]),
   },
   methods: {
     ...mapActions(["getPosts", "getNextPosts"]),
@@ -41,7 +44,6 @@ export default {
       console.log("this is the bottom!");
       this.setIsNextFetch(true);
       this.getNextPosts();
-      this.setIsNextFetch(false);
     },
   },
   created() {
@@ -57,6 +59,7 @@ export default {
   beforeDestroy() {
     document.removeEventListener("scroll", this.onScroll);
     this.setPosts(null);
+    this.setIsNextFetch(false);
   },
 };
 </script>
@@ -72,5 +75,9 @@ export default {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+.list-loading-message {
+  margin: 3rem auto;
 }
 </style>

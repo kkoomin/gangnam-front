@@ -2,30 +2,28 @@
 
 > 강남엄마 프론트엔드 개발자 전형 사전과제
 
-## Project setup
+## 프로젝트 빌드 및 실행 방법
+
+1. 프로젝트 설치
 
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+2. 프로젝트 Development 모드로 실행
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+3. 프로젝트 배포
 
 ```
 npm run build
 ```
 
-### Lints and fixes files
+## 크로스브라우징 대응
 
-```
-npm run lint
-```
+1. 범위
 
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2. 해당 범위 설정 이유

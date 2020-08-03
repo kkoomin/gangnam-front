@@ -71,7 +71,7 @@ export default {
   cursor: pointer;
   margin: 2px;
   height: 2rem;
-  width: 5rem;
+  width: 6rem;
   border: 1.5px solid #dd1239;
   border-radius: 5px;
 }

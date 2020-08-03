@@ -1,8 +1,6 @@
 <template>
   <section class="post-container">
     <article v-if="post">
-      <button class="list-btn" @click="selectPostId(null)">목록보기</button>
-
       <div class="content">
         <h1 class="content-title">{{ post.title }}</h1>
         <span class="content-author">✏️ {{ post.userName }}</span>
@@ -20,6 +18,7 @@
           :comment="comment"
         />
       </div>
+      <button class="list-btn" @click="selectPostId(null)">목록보기</button>
     </article>
   </section>
 </template>
@@ -59,24 +58,19 @@ export default {
 .post-container {
   max-width: 1000px;
   margin: 1.5rem auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   .content {
-    /* border-top: 2px solid black; */
+    border-top: 1px solid rgb(199, 198, 198);
     border-bottom: 1px solid rgb(199, 198, 198);
-
-    /* margin-top: 3rem; */
-    /* margin-bottom: 3rem; */
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     &-title {
       max-width: max-content;
-      margin: 2rem auto 1rem auto;
+      margin: auto auto 1rem auto;
       font-size: 1.4rem;
-      background-image: linear-gradient(to right, #dd123bb9, #dd123bb9);
-      background-position: bottom left;
-      background-repeat: no-repeat;
-      background-size: 100% 0.6rem;
     }
 
     &-author {
@@ -109,8 +103,9 @@ export default {
   cursor: pointer;
   margin: 2px;
   height: 2rem;
-  width: 5rem;
-  border: 2px solid #dd1239;
+  width: 6rem;
+  border: 1.5px solid #dd1239;
+  border-radius: 5px;
 
   &:hover {
     background: #dd1239;
