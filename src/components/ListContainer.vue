@@ -34,8 +34,8 @@ export default {
     ...mapMutations(["setPosts", "setView", "setNumber", "setIsNextFetch"]),
     onScroll() {
       if (
-        window.scrollY + document.documentElement.clientHeight >
-        document.documentElement.scrollHeight - 1
+        window.scrollY + document.documentElement.clientHeight >=
+        document.documentElement.scrollHeight
       ) {
         this.loadNextPosts();
       }
@@ -43,14 +43,15 @@ export default {
     loadNextPosts() {
       this.setIsNextFetch(true);
       this.getNextPosts();
+      this.setIsNextFetch(false);
     },
   },
   created() {
-    this.getPosts();
     if (localStorage.getItem("view"))
       this.setView(localStorage.getItem("view"));
     if (localStorage.getItem("number"))
       this.setNumber(localStorage.getItem("number") * 1);
+    this.getPosts();
   },
   mounted() {
     document.addEventListener("scroll", this.onScroll);

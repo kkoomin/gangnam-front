@@ -103,8 +103,6 @@ const actions = {
       return { ...post, userName: user_name };
     });
     commit("setSelectedPost", post_data);
-
-    // ****************** 유저이름 불러오기 구현하기!!!
   },
 
   selectPostId({ commit }, id) {

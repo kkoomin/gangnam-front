@@ -99,7 +99,7 @@ export default {
   .post-item_info {
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       box-sizing: border-box;
-      width: 100%;
+      width: 90%;
     }
   }
 

@@ -20,14 +20,14 @@
       <button
         class="number-btn"
         :class="postNumber === 8 ? 'clicked' : null"
-        @click="changePostNumber(8)"
+        @click="onPostNumberChange(8)"
       >
         8개씩 보기
       </button>
       <button
         class="number-btn"
         :class="postNumber === 16 ? 'clicked' : null"
-        @click="changePostNumber(16)"
+        @click="onPostNumberChange(16)"
       >
         16개씩 보기
       </button>
@@ -36,11 +36,18 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 export default {
   name: "FilterBar",
   methods: {
-    ...mapActions(["changePostView", "changePostNumber"]),
+    ...mapActions(["changePostView", "changePostNumber", "getPosts"]),
+    ...mapMutations(["setIsNextFetch", "setPosts"]),
+    onPostNumberChange(num) {
+      this.changePostNumber(num);
+      this.setIsNextFetch(false);
+      this.setPosts([]);
+      this.getPosts();
+    },
   },
   computed: {
     ...mapGetters(["postView", "postNumber"]),
