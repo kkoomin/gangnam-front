@@ -71,6 +71,12 @@ export default {
 
 .grid {
   @media only screen and (min-width: 992px) {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+
     display: grid;
     display: -ms-grid;
 

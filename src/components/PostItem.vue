@@ -15,7 +15,6 @@
     </div>
     <div class="post-item_thumbnail">
       <img v-if="post.image" :src="post.image" alt="Post Thumbnail Image" />
-      <div v-else>Loading...</div>
     </div>
   </article>
 </template>
@@ -34,6 +33,7 @@ export default {
 <style lang="scss" scoped>
 .post-item {
   box-shadow: 0 8px 10px 1px rgba(41, 37, 33, 0.178);
+
   display: grid;
   display: -ms-grid;
 
@@ -78,6 +78,11 @@ export default {
 }
 
 .grid-item {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    box-sizing: border-box;
+    width: calc(100% / 4.3);
+  }
+
   @media only screen and (min-width: 992px) {
     display: flex;
     flex-direction: column-reverse;
