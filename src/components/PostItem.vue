@@ -35,7 +35,10 @@ export default {
 .post-item {
   box-shadow: 0 8px 10px 1px rgba(41, 37, 33, 0.178);
   display: grid;
-  grid-template-columns: 1fr max-content;
+  /* grid-template-columns: 1fr max-content; */
+  grid-template: auto / 1fr max-content;
+  -ms-grid-columns: 1fr max-content;
+
   margin: 1rem auto;
   padding: 3px;
 

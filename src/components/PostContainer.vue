@@ -9,9 +9,7 @@
 
       <div class="comments" v-if="comments">
         <span class="comments-count">{{ comments.length }}</span>
-
         <h1>Comments</h1>
-
         <Comment
           v-for="comment in comments"
           :key="comment.id"

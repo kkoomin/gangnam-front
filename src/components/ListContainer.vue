@@ -73,7 +73,8 @@ export default {
 .grid {
   @media only screen and (min-width: 992px) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template: auto / 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
