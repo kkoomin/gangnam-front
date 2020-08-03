@@ -72,6 +72,8 @@ export default {
 .grid {
   @media only screen and (min-width: 992px) {
     display: grid;
+    display: -ms-grid;
+
     grid-template: auto / 1fr 1fr 1fr 1fr;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
   }

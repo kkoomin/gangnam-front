@@ -51,9 +51,8 @@ export default {
 <style lang="scss">
 .filter-bar {
   margin: 2rem auto;
-  display: grid;
+  display: flex;
   justify-content: center;
-  grid-template-columns: repeat(2, max-content);
 
   .filter-content {
     margin: 0 0.5rem;
