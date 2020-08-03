@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Gangnam Writer</h1>
+    <h1><span>G</span>angmom Writer</h1>
   </header>
 </template>
 
@@ -13,13 +13,17 @@ export default {
 <style lang="scss" scoped>
 header {
   h1 {
-    width: 20rem;
+    max-width: 23rem;
     margin: 4rem auto;
     font-size: 2.5rem;
-    background-image: linear-gradient(to right, #dd123bb9, #dd123bb9);
+    /* background-image: linear-gradient(to right, #dd123bb9, #dd123bb9);
     background-position: bottom left;
     background-repeat: no-repeat;
-    background-size: 100% 1.2rem;
+    background-size: 100% 1.2rem; */
+    span {
+      font-size: 3rem;
+      color: #dd1239;
+    }
   }
 }
 </style>
