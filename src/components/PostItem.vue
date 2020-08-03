@@ -34,11 +34,7 @@ export default {
 <style lang="scss" scoped>
 .post-item {
   box-shadow: 0 8px 10px 1px rgba(41, 37, 33, 0.178);
-  display: grid;
-  display: -ms-grid;
-
-  grid-template: auto / 1fr max-content;
-  -ms-grid-columns: 1fr max-content;
+  display: flex;
 
   margin: 1rem auto;
   padding: 3px;

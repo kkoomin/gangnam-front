@@ -76,6 +76,7 @@ export default {
 
     grid-template: auto / 1fr 1fr 1fr 1fr;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
   }
 }
 
