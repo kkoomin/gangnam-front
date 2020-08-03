@@ -1,6 +1,6 @@
-# gangnam-front
+# Gangmom Writer
 
-> 강남엄마 프론트엔드 개발자 전형 사전과제    
+> 강남엄마 프론트엔드 개발자 전형 사전과제  
 > https://gangmom-writer.netlify.app/
 
 ## 프로젝트 빌드 및 실행 방법
