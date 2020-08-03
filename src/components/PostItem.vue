@@ -34,6 +34,12 @@ export default {
 .post-item {
   box-shadow: 0 8px 10px 1px rgba(41, 37, 33, 0.178);
 
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+
   display: grid;
   display: -ms-grid;
 
@@ -45,6 +51,10 @@ export default {
   padding: 3px;
 
   &_info {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      box-sizing: border-box;
+      width: calc(100% - 200px);
+    }
     margin: 0 1rem;
     &-title {
       font-size: 1.2rem;
@@ -56,6 +66,10 @@ export default {
   }
 
   &_thumbnail {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      box-sizing: border-box;
+      width: 150px;
+    }
     display: flex;
     justify-content: center;
     height: 150px;
