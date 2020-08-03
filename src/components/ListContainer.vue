@@ -57,9 +57,9 @@ export default {
     document.addEventListener("scroll", this.onScroll);
   },
   beforeDestroy() {
-    document.removeEventListener("scroll", this.onScroll);
-    this.setPosts(null);
     this.setIsNextFetch(false);
+    this.setPosts(null);
+    document.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>

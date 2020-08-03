@@ -36,12 +36,7 @@ const actions = {
       "https://via.placeholder.com/150/56a8c0",
     ];
 
-    // * posts 한번에 다 가져오기  *
-    // const url = `${ROOT_URL}/posts`;
-    // const original_posts_data = await axios.get(url).then((res) => res.data);
-
     // * 세팅된 post의 수 만큼 posts 가져오기 *
-
     let promises = [];
     let original_posts_data = [];
 

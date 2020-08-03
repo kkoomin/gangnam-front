@@ -1,6 +1,7 @@
 <template>
   <section class="post-container">
     <article v-if="post">
+      <button class="list-btn" @click="selectPostId(null)">목록보기</button>
       <div class="content">
         <h1 class="content-title">{{ post.title }}</h1>
         <span class="content-author">✏️ {{ post.userName }}</span>
@@ -16,7 +17,6 @@
           :comment="comment"
         />
       </div>
-      <button class="list-btn" @click="selectPostId(null)">목록보기</button>
     </article>
   </section>
 </template>
@@ -68,7 +68,7 @@ export default {
     &-title {
       max-width: max-content;
       margin: auto auto 1rem auto;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
 
     &-author {
@@ -99,7 +99,9 @@ export default {
 .list-btn {
   all: unset;
   cursor: pointer;
+  /* display: block; */
   margin: 2px;
+  margin-bottom: 1rem;
   height: 2rem;
   width: 6rem;
   border: 1.5px solid #dd1239;
