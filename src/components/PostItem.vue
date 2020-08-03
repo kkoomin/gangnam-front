@@ -53,7 +53,6 @@ export default {
   &_info {
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       box-sizing: border-box;
-      width: calc(100% - 200px);
     }
     margin: 0 1rem;
     &-title {
